@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geometry Genius</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="m-8">
+    <header></header>
+    <main>
+      <div class="flex flex-col md:flex-row">
+        <div
+          class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          <!-- Triangle -->
+
+          <div class="card card-compact w-80 bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="/geometry-genius-resources/images/triangle.png"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body text-center items-center">
+              <h2 class="card-title">Triangle</h2>
+              <p>Area = 0.5 x b x h</p>
+              <div class="flex">
+                <input
+                  id="triangle-base"
+                  class="w-12 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="b"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+                <input
+                  id="triangle-height"
+                  class="w-12 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="h"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">
+                  Area: <span id="triangle-area"></span>
+                  <span>cm <sup>2</sup></span>
+                </p>
+              </div>
+              <div class="card-actions justify-end">
+                <button
+                  onclick="calculateTriangle()"
+                  class="btn btn-primary w-72"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- rectangle -->
+
+          <div class="card card-compact w-80 bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="/geometry-genius-resources/images/rectangle.png"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body text-center items-center">
+              <h2 class="card-title">Rectangle</h2>
+              <p>Area = w x l</p>
+              <div class="flex">
+                <input
+                  id="rectangle-base"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="width"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+                <input
+                  id="rectangle-height"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="length"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">
+                  Area: <span id="rectangle-area"></span>
+                  <span>cm <sup>2</sup></span>
+                </p>
+              </div>
+              <div class="card-actions justify-end">
+                <button
+                  onclick="calculaterectangle()"
+                  class="btn btn-primary w-72"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- parallelogram -->
+          <div class="card card-compact w-80 bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="/geometry-genius-resources/images/parallelogram.png"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body text-center items-center">
+              <h2 class="card-title">Parallelogram</h2>
+              <p>Area = b x h</p>
+              <div class="flex">
+                <input
+                  id="parallelogram-base"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="base"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+                <input
+                  id="parallelogram-height"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="height"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">
+                  Area: <span id="parallelogram-area"></span>
+                  <span>cm <sup>2</sup></span>
+                </p>
+              </div>
+              <div class="card-actions justify-end">
+                <button
+                  onclick="calculateParallelogramArea()"
+                  class="btn btn-primary w-72"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- rhombus -->
+          <div class="card card-compact w-80 bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="/geometry-genius-resources/images/rhombus.png"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body text-center items-center">
+              <h2 class="card-title">Rhombus</h2>
+              <p>Area = 0.5 * w x l</p>
+              <div class="flex">
+                <input
+                  id="rhombus-perimeter"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="perimeter"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+                <input
+                  id="rhombus-apo"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="apo"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">
+                  Area: <span id="rhombus-area"></span>
+                  <span>cm <sup>2</sup></span>
+                </p>
+              </div>
+              <div class="card-actions justify-end">
+                <button
+                  onclick="calculateRhombusArea()"
+                  class="btn btn-primary w-72"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- pentagon -->
+          <div class="card card-compact w-80 bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="/geometry-genius-resources/images/pentagon.png"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body text-center items-center">
+              <h2 class="card-title">Pentagon</h2>
+              <p>Area = 0.5 * p x b</p>
+              <div class="flex">
+                <input
+                  id="pentagon-perimeter"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="perimeter"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+                <input
+                  id="pentagon-apo"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="apo"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">
+                  Area: <span id="pentagon-area"></span>
+                  <span>cm <sup>2</sup></span>
+                </p>
+              </div>
+              <div class="card-actions justify-end">
+                <button
+                  onclick="calculatePentagonArea()"
+                  class="btn btn-primary w-72"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- ellipse -->
+          <div class="card card-compact w-80 bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="/geometry-genius-resources/images/ellipse.png"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body text-center items-center">
+              <h2 class="card-title">Ellipse</h2>
+              <p>Area = π * a * b</p>
+              <div class="flex">
+                <input
+                  id="ellipse-major-radius"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="perimeter"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+                <input
+                  id="ellipse-minor-radius"
+                  class="w-24 text-2xl p-2 rounded-sm bg-gray-300"
+                  type="text"
+                  placeholder="apo"
+                />
+                <span class="mr-4 ml-2 text-2xl">cm</span>
+              </div>
+              <div>
+                <p class="text-2xl">
+                  Area: <span id="ellipse-area"></span>
+                  <span>cm <sup>2</sup></span>
+                </p>
+              </div>
+              <div class="card-actions justify-end">
+                <button
+                  onclick="calculateellipseArea()"
+                  class="btn btn-primary w-72"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-[20%] border-2 border-gray-500 rounded-md">
+          <!-- Area calculation -->
+          <h3 class="text-3xl text-center p-4">Area calculation</h3>
+        </div>
+      </div>
+
+      <script src="scripts/triangle-calculate.js"></script>
+      <script src="scripts/rectangle-area.js"></script>
+      <script src="scripts/parallelogramArea.js"></script>
+      <script src="scripts/pentagonArea.js"></script>
+      <script src="scripts/ellipse-area.js"></script>
+      <script src="scripts/rhombus-area.js"></script>
+    </main>
+    <footer></footer>
+  </body>
+</html>
